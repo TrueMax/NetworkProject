@@ -13,7 +13,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let urlString = "https://jsonplaceholder.typicode.com/todos/186"
+        NetworkService.dataTaskRequest(url: URL(string: urlString)!) { string in
+            if let result = string {
+                print(result)
+            }
+        }
     }
 
 
