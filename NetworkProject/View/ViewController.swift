@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         case 1:
             viewModel.downloadContents()
         case 2:
-            break
+            viewModel.fetchTrains()
         case 3:
             viewModel.receiveData()
         default:

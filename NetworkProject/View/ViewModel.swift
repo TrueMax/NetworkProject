@@ -137,6 +137,20 @@ class ViewModel {
             }
         }
     }
+    
+    func fetchTrains() {
+        var request = URLRequest(url: URL(string: Trains.trainUrlString)!)
+        request.httpMethod = "POST"
+        request.httpBody = try! JSONEncoder().encode(Trains.trainRequest)
+        request.allHTTPHeaderFields = Trains.trainHeaders
+        
+        NetworkService.dataTaskRequest(
+            urlRequest: request) { data in
+            if let data = data {
+                print(String(data: data, encoding: .utf8) ?? "empty data")
+            }
+        }
+    }
 }
 
 extension ViewModel: RequestFactory {
