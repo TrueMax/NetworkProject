@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945609FE26177470008E48B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945609FD26177470008E48B9 /* Constants.swift */; };
+		94560A012617ABD5008E48B9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94560A002617ABD5008E48B9 /* AppConfiguration.swift */; };
 		9495506325F92F1000A2AD3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495506225F92F1000A2AD3C /* AppDelegate.swift */; };
 		9495506525F92F1000A2AD3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495506425F92F1000A2AD3C /* SceneDelegate.swift */; };
 		9495506725F92F1000A2AD3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495506625F92F1000A2AD3C /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		945609FD26177470008E48B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		94560A002617ABD5008E48B9 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		9495505F25F92F1000A2AD3C /* NetworkProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9495506225F92F1000A2AD3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9495506425F92F1000A2AD3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				9495506825F92F1000A2AD3C /* Main.storyboard */,
 				9495506B25F92F1400A2AD3C /* Assets.xcassets */,
 				9495506D25F92F1400A2AD3C /* LaunchScreen.storyboard */,
+				945609FD26177470008E48B9 /* Constants.swift */,
+				94560A002617ABD5008E48B9 /* AppConfiguration.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -184,6 +190,8 @@
 				9495506725F92F1000A2AD3C /* ViewController.swift in Sources */,
 				9495506325F92F1000A2AD3C /* AppDelegate.swift in Sources */,
 				94C9449B25FEA9AD004DC9D9 /* TrainRequest.swift in Sources */,
+				94560A012617ABD5008E48B9 /* AppConfiguration.swift in Sources */,
+				945609FE26177470008E48B9 /* Constants.swift in Sources */,
 				94C944E326039125004DC9D9 /* JsonConvertible.swift in Sources */,
 				9495507825F92F3F00A2AD3C /* NetworkService.swift in Sources */,
 				94C944E6260391E6004DC9D9 /* ViewModel.swift in Sources */,

@@ -176,3 +176,24 @@ extension ViewModel: RequestFactory {
         return request
     }
 }
+
+extension ViewModel {
+    
+    private func fetchInitialData(_ config: AppConfiguration) {
+        switch config {
+        case .configOne(let url):
+            NetworkService.dataTask(url: url) { string in
+                <#code#>
+            }
+        case .configTwo(let url):
+            NetworkService.downloadTask(url: url) { string in
+                <#code#>
+            }
+        case .configThree(let url):
+            let request = URLRequest(url: url)
+            NetworkService.dataTaskRequest(urlRequest: request) { data in
+                <#code#>
+            }
+        }
+    }
+}

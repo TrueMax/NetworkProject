@@ -38,6 +38,8 @@ class SessionDownloadDelegate: NSObject, URLSessionDownloadDelegate {
 
 struct NetworkService {
     
+    static var applicationConfiguration: AppConfiguration?
+    
     private static let sharedSession = URLSession.shared
     private static var defaultSession: URLSession {
         return URLSession(
