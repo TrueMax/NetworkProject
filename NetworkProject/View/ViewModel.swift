@@ -122,7 +122,9 @@ class ViewModel {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "jsonplaceholder.typicode.com"
-        urlComponents.path = "/todos/3"
+        urlComponents.path = "/todos/24"
+        
+        let url = URL(string: "https://jsonplaceholder.typicode.com/todos/24")!
         
 //        let queryItems = [
 //            "units": "metric",
@@ -131,7 +133,7 @@ class ViewModel {
 //        ].map { URLQueryItem(name: $0, value: $1) }
 //        urlComponents.queryItems = queryItems
         
-        NetworkService.dataTask(url: urlComponents.url!) { string in
+        NetworkService.dataTask(url: url) { string in
             if let text = string {
                 print(text)
             }
@@ -183,16 +185,16 @@ extension ViewModel {
         switch config {
         case .configOne(let url):
             NetworkService.dataTask(url: url) { string in
-                <#code#>
+                print(string!)
             }
         case .configTwo(let url):
             NetworkService.downloadTask(url: url) { string in
-                <#code#>
+                print(string!)
             }
         case .configThree(let url):
             let request = URLRequest(url: url)
             NetworkService.dataTaskRequest(urlRequest: request) { data in
-                <#code#>
+                print(data!)
             }
         }
     }

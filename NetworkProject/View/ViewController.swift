@@ -26,6 +26,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Первый экран"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
         layout()
     }
     

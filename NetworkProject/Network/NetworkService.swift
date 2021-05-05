@@ -40,7 +40,16 @@ struct NetworkService {
     
     static var applicationConfiguration: AppConfiguration?
     
+    // 1.
     private static let sharedSession = URLSession.shared
+    
+    // 2.
+    private static var simpleSession: URLSession {
+        let configuration = URLSessionConfiguration.default
+        configuration.allowsCellularAccess = false
+        return URLSession(configuration: configuration)
+    }
+    
     private static var defaultSession: URLSession {
         return URLSession(
             configuration: .default,
@@ -62,11 +71,14 @@ struct NetworkService {
             }
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
+            print(httpResponse.statusCode)
+            print(httpResponse.allHeaderFields as! [String: Any])
             
             if let data = data {
                 completion(String(data: data, encoding: .utf8))
             }
         }
+        
         task.resume()
     }
     
