@@ -13,26 +13,28 @@ class ViewModel {
     
     private enum Trains {
         static let trainUrlString = "https://trains.p.rapidapi.com/"
+        
         static let trainHeaders = [
             "content-type": "application/json",
             "x-rapidapi-key": "83b49bb162mshaaddbd43205ca6bp1e8410jsn558ad047c75b",
             "x-rapidapi-host": "trains.p.rapidapi.com"
         ]
+        
         static let trainRequest = TrainRequest(search: "Rajdhani")
     }
     
-    private enum SampleData {
-        static let dictionary: [String: Any] = [ "name": "Anna",
-                                                 "age": 30,
-                                                 "cats": ["Tom", "Sue"]
-        ]
-        
-        static let person = Person(
-            name: "Richard",
-            age: 45,
-            dogs: ["Jack", "Bobik"]
-        )
-    }
+//    private enum SampleData {
+//        static let dictionary: [String: Any] = [ "name": "Anna",
+//                                                 "age": 30,
+//                                                 "cats": ["Tom", "Sue"]
+//        ]
+//
+//        static let person = Person(
+//            name: "Richard",
+//            age: 45,
+//            dogs: ["Jack", "Bobik"]
+//        )
+//    }
     
     private enum LocalServer {
         static let localUrl = "http://localhost:5000"
@@ -107,12 +109,12 @@ class ViewModel {
     // DOWNLOAD CONTENTS FROM URL
     
     func downloadContents() {
-        let url = URL(string: "https://www.rbc.ru")!
+        let url = URL(string: "https://www.apple.com/iphone")!
         
         NetworkService.downloadTask(
             url: url) { string in
             if let contents = string {
-                // print(contents)
+                print(contents)
             }
         }
     }
@@ -141,15 +143,30 @@ class ViewModel {
     }
     
     func fetchTrains() {
+        // 1. инициализируем URLRequest
         var request = URLRequest(url: URL(string: Trains.trainUrlString)!)
+        
+        // 2. прописываем метод HTTP
         request.httpMethod = "POST"
+        
+        // 3. encode HTTP body - тело запроса
         request.httpBody = try! JSONEncoder().encode(Trains.trainRequest)
+        
+        // 4. прописываем заголовки
         request.allHTTPHeaderFields = Trains.trainHeaders
+        
+//        request.setValue("application/json", forHTTPHeaderField: "content-type")
         
         NetworkService.dataTaskRequest(
             urlRequest: request) { data in
             if let data = data {
-                print(String(data: data, encoding: .utf8) ?? "empty data")
+//                print(String(data: data, encoding: .utf8) ?? "empty data")
+                do {
+                    let trains = try JSONDecoder().decode([TrainName].self, from: data)
+                    print(trains)
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }

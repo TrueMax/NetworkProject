@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		945609FE26177470008E48B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945609FD26177470008E48B9 /* Constants.swift */; };
 		94560A012617ABD5008E48B9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94560A002617ABD5008E48B9 /* AppConfiguration.swift */; };
+		946E56F0264AF063009D4276 /* IndianTrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946E56EF264AF063009D4276 /* IndianTrains.swift */; };
+		946E56F4264AF2AA009D4276 /* TrainName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946E56F3264AF2AA009D4276 /* TrainName.swift */; };
 		9495506325F92F1000A2AD3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495506225F92F1000A2AD3C /* AppDelegate.swift */; };
 		9495506525F92F1000A2AD3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495506425F92F1000A2AD3C /* SceneDelegate.swift */; };
 		9495506725F92F1000A2AD3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495506625F92F1000A2AD3C /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		945609FD26177470008E48B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		94560A002617ABD5008E48B9 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		946E56EF264AF063009D4276 /* IndianTrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndianTrains.swift; sourceTree = "<group>"; };
+		946E56F3264AF2AA009D4276 /* TrainName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainName.swift; sourceTree = "<group>"; };
 		9495505F25F92F1000A2AD3C /* NetworkProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9495506225F92F1000A2AD3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9495506425F92F1000A2AD3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		946E56F2264AF299009D4276 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				946E56F3264AF2AA009D4276 /* TrainName.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9495505625F92F1000A2AD3C = {
 			isa = PBXGroup;
 			children = (
@@ -106,11 +118,13 @@
 		94C944EE260394B4004DC9D9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				946E56F2264AF299009D4276 /* Models */,
 				9495507725F92F3F00A2AD3C /* NetworkService.swift */,
 				94C9449725FE4AAC004DC9D9 /* Person.swift */,
 				94C9449A25FEA9AD004DC9D9 /* TrainRequest.swift */,
 				94C944E226039123004DC9D9 /* JsonConvertible.swift */,
 				94C944E82603924D004DC9D9 /* RequestFactory.swift */,
+				946E56EF264AF063009D4276 /* IndianTrains.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -185,7 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946E56F4264AF2AA009D4276 /* TrainName.swift in Sources */,
 				94C944E92603924D004DC9D9 /* RequestFactory.swift in Sources */,
+				946E56F0264AF063009D4276 /* IndianTrains.swift in Sources */,
 				94C9449825FE4AAC004DC9D9 /* Person.swift in Sources */,
 				9495506725F92F1000A2AD3C /* ViewController.swift in Sources */,
 				9495506325F92F1000A2AD3C /* AppDelegate.swift in Sources */,

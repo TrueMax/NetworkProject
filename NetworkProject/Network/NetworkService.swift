@@ -24,7 +24,7 @@ class SessionDelegate: NSObject, URLSessionDataDelegate {
 
 class SessionDownloadDelegate: NSObject, URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("isFinished downloading")
+        print(try! String(contentsOf: location))
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
@@ -53,7 +53,7 @@ struct NetworkService {
     private static var defaultSession: URLSession {
         return URLSession(
             configuration: .default,
-            delegate: SessionDelegate(),
+            delegate: SessionDownloadDelegate(),
             delegateQueue: OperationQueue.main)
     }
     
@@ -86,7 +86,6 @@ struct NetworkService {
         urlRequest: URLRequest,
         completion: @escaping (Data?) -> Void
     ) {
-        
         let task = sharedSession.dataTask(
             with: urlRequest
         ) { data, response, error in
@@ -139,11 +138,10 @@ struct NetworkService {
         let request = URLRequest(url: url)
         let dTask = defaultSession.downloadTask(with: request)
         
-//        let task = defaultSession.downloadTask(with: url) { localURL, urlResponse, error in
+//        { localURL, urlResponse, error in
 //            if let localURL = localURL {
 //                completion(try? String(contentsOf: localURL))
 //            }
-//        }
         
         dTask.resume()
     }
